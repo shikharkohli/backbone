@@ -27,7 +27,7 @@
              this.$el.html(this.template(this.model.toJSON()));
          }
 
-     })
+     });
 
      var todoList = new app.TodoList();
 
@@ -42,7 +42,7 @@
      view.render();
 
      app.AppView = Backbone.View.extend({
-        el: $("#todoapp");
+        el: $("#todoapp"),
         initialize: function()
         {
             this.input = this.$("#task-input");
@@ -50,14 +50,17 @@
             app.todoList.on('reset', this.resetTask, this);
             app.todoList.fetch();   
 
-        }
+        },
         addTask: function()
         {
             var newTask = new app.TodoView({model:todo});
 
             $("#todoapp").append(newTask.render().el);
+        },
+        render: function()
+        {
+            this.$el.html('Some text');
         }
      });
 
-     var app.AppView = new app.AppView;
  });

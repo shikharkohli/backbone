@@ -1,0 +1,28 @@
+{
+  "name": "backbone",
+  "version": "1.0.0",
+  "description": "Backbone practice",
+  "main": "tut.js",
+  "dependencies": {
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shikharkohli/backbone.git"
+  },
+  "keywords": [
+    "backbone",
+    "npm",
+    "grunt"
+  ],
+  "author": "skohli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shikharkohli/backbone/issues"
+  },
+  "homepage": "https://github.com/shikharkohli/backbone#readme"
+}
