@@ -1,4 +1,4 @@
- $(document).ready(function() {
+$(document).ready(function() {
 
      var app = {};
 
@@ -39,16 +39,33 @@
      var view = new app.TodoView({
          model: todo
      });
+
      view.render();
 
      app.AppView = Backbone.View.extend({
         el: $("#todoapp"),
+        events:
+        {
+            'keypress #new-todo' : 'newTodoOnEnter'
+        },
+        newTodoOnEnter: function(evt)
+        {
+            if( evt.which != 13)
+                return;
+            todoList.add(this.newAttributes());
+            $('#new-todo').val('');
+            $('#default').append()
+        },
+        newAttributes: function()
+        {
+            var x = new app.Todo;
+            x.set('title', $('#new-todo').val());
+            x.set('completed',false);
+        },
         initialize: function()
         {
             this.input = this.$("#task-input");
-            app.todoList.on('add', this.addTask, this);
-            app.todoList.on('reset', this.resetTask, this);
-            app.todoList.fetch();   
+            todoList.fetch();   
 
         },
         addTask: function()
@@ -59,8 +76,13 @@
         },
         render: function()
         {
-            this.$el.html('Some text');
+            this.collection.forEach()
         }
      });
 
- });
+var newView = new app.AppView(
+                            {collection: todoList}
+                            );
+
+
+});
