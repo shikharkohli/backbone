@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 
      app.TodoView = Backbone.View.extend({
-         el: $("#default"),
+         el: $("#todo-list"),
          tagName: 'li',
          events: {
           "click li": 'triggerx'
