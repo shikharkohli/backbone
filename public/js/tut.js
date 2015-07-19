@@ -1,4 +1,3 @@
-$(document).ready(function() {
 
      var app = {};
 
@@ -21,7 +20,9 @@ $(document).ready(function() {
          events: {
           "click li": 'triggerx'
          },
-         triggerx: function(){alert("triggered");},
+         triggerx: function(){
+                            alert("triggered");
+                        },
          template: _.template($("#item-template").html()),
          render: function() {
              this.$el.html(this.template(this.model.toJSON()));
@@ -84,5 +85,3 @@ var newView = new app.AppView(
                             {collection: todoList}
                             );
 
-
-});
